@@ -17,19 +17,14 @@ $output = "";
 $coin = 0;
 $res = 0;
 $file = fopen("data.txt", "r");
-
-
 $User = new Player();
 $User->start_game($file);
 ?>
 
 
 <?php
-
-
 $num = (isset($_SESSION['num'])) ? $_SESSION["num"] : 0;
 $num++;
-
 $_SESSION["num"] = $num;
 if ($num>1) {
     echo '        <b> Refresh to start game! </b>         ';
@@ -66,6 +61,7 @@ if (isset($_POST['postid'])) {
 
 ?>
 
+
 <?php
 if (isset($_POST['myActionName'])) {
     for($i=1;$i<=1;$i++) {
@@ -100,10 +96,9 @@ if (isset($_POST['myActionName'])) {
     <form name="feedback" method="POST">
         <input name="postid" type="hidden" value="1234">
         <label>Direction: <input type="text" name="name"></label>
-
-
         <input type="submit" name="send" value="Send">
     </form>
+
 
     <form action="index.php" method="POST">
         <input name="myActionName" type="submit" value="Refresh"/>
@@ -112,7 +107,7 @@ if (isset($_POST['myActionName'])) {
 
     <center>heey</center>
     <center>Coordinata <?php $b = $User->h;
-        print("$b->y   $b->x ") ?></center>
+        print("$b->x   $b->y ") ?></center>
     <center> <?php print(can_go($User->h)); ?></center>
     <center> <?php print($output);
         $output = ""; ?></center>
@@ -128,6 +123,7 @@ if (isset($_POST['myActionName'])) {
     echo '<img src="image/chest.gif" />';
     echo '<img src="image/mons1.gif" />';
     ?></center>
+
 <center> В этой игре тебе необходимо добраться из левого нижнего угла карты до правого верхнего. </center>
 <center>На пути тебе могут встречаться пустые комнаты,комнаты с монстром, или даже с сокровищем. </center>
 <center>Не бойся,ионстры не кусаются! Твой счёт не станет отрицательным. </center>
@@ -140,7 +136,5 @@ if (isset($_POST['myActionName'])) {
 <center>Для того,чтобы заново,нажми Refresh, тебе об этом сказано в верхней части страницы </center>
 <center>Для того,чтобы заново,нажми Refresh, тебе об этом сказано в верхней части страницы </center>
 <center>Эта надпись должна исчезнуть </center>
-
-
 </body>
 </html>
