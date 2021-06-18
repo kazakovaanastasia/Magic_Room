@@ -37,7 +37,7 @@ if ($num>1) {
 
 if (isset($_POST['postid'])) {
 
-   # if(if_able($User->h,$_POST['name'])){
+    # if(if_able($User->h,$_POST['name'])){
     if (1) {
 
         #print("dir: " . $_POST['name']);
@@ -112,7 +112,7 @@ if (isset($_POST['myActionName'])) {
 
     <center>heey</center>
     <center>Coordinata <?php $b = $User->h;
-        print("$b->x   $b->y ") ?></center>
+        print("$b->y   $b->x ") ?></center>
     <center> <?php print(can_go($User->h)); ?></center>
     <center> <?php print($output);
         $output = ""; ?></center>
